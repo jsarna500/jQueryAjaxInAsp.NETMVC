@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="atlasdbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="hsn_table">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="product_id" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="file_id" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="prod_desc" Type="varchar(max)" Nullable="false" />
+          <Property Name="ref_files_path" Type="varchar(max)" Nullable="false" />
+          <Property Name="year" Type="int" Nullable="false" />
+          <Property Name="estimated_eu_taric" Type="bigint" Nullable="false" />
+          <Property Name="estimated_eu_en" Type="bigint" Nullable="false" />
+          <Property Name="estimated_us_htsus" Type="bigint" Nullable="false" />
+          <Property Name="estimated_us_schedule_b" Type="bigint" Nullable="false" />
+          <Property Name="estimated_china_hsn" Type="bigint" Nullable="false" />
+          <Property Name="estimated_india_hsn" Type="bigint" Nullable="false" />
+          <Property Name="estimated_turkey_hsn" Type="bigint" Nullable="false" />
+          <Property Name="estimated_sa_tariff_code" Type="bigint" Nullable="false" />
+          <Property Name="actual_eu_taric" Type="bigint" />
+          <Property Name="actual_eu_en" Type="bigint" />
+          <Property Name="actual_us_htsus" Type="bigint" />
+          <Property Name="actual_us_schedule_b" Type="bigint" />
+          <Property Name="actual_china_hsn" Type="bigint" />
+          <Property Name="actual_india_hsn" Type="bigint" />
+          <Property Name="actual_turkey_hsn" Type="bigint" />
+          <Property Name="actual_sa_tariff_code" Type="bigint" />
+        </EntityType>
+        <EntityContainer Name="atlasdbModelStoreContainer">
+          <EntitySet Name="hsn_table" EntityType="Self.hsn_table" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="atlasdbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="hsn_table">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="product_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="file_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="prod_desc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ref_files_path" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="year" Type="Int32" Nullable="false" />
+          <Property Name="estimated_eu_taric" Type="Int64" Nullable="false" />
+          <Property Name="estimated_eu_en" Type="Int64" Nullable="false" />
+          <Property Name="estimated_us_htsus" Type="Int64" Nullable="false" />
+          <Property Name="estimated_us_schedule_b" Type="Int64" Nullable="false" />
+          <Property Name="estimated_china_hsn" Type="Int64" Nullable="false" />
+          <Property Name="estimated_india_hsn" Type="Int64" Nullable="false" />
+          <Property Name="estimated_turkey_hsn" Type="Int64" Nullable="false" />
+          <Property Name="estimated_sa_tariff_code" Type="Int64" Nullable="false" />
+          <Property Name="actual_eu_taric" Type="Int64" />
+          <Property Name="actual_eu_en" Type="Int64" />
+          <Property Name="actual_us_htsus" Type="Int64" />
+          <Property Name="actual_us_schedule_b" Type="Int64" />
+          <Property Name="actual_china_hsn" Type="Int64" />
+          <Property Name="actual_india_hsn" Type="Int64" />
+          <Property Name="actual_turkey_hsn" Type="Int64" />
+          <Property Name="actual_sa_tariff_code" Type="Int64" />
+        </EntityType>
+        <EntityContainer Name="atlasdbEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="hsn_table" EntityType="Self.hsn_table" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="atlasdbModelStoreContainer" CdmEntityContainer="atlasdbEntities1">
+          <EntitySetMapping Name="hsn_table">
+            <EntityTypeMapping TypeName="atlasdbModel.hsn_table">
+              <MappingFragment StoreEntitySet="hsn_table">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="product_id" ColumnName="product_id" />
+                <ScalarProperty Name="file_id" ColumnName="file_id" />
+                <ScalarProperty Name="prod_desc" ColumnName="prod_desc" />
+                <ScalarProperty Name="ref_files_path" ColumnName="ref_files_path" />
+                <ScalarProperty Name="year" ColumnName="year" />
+                <ScalarProperty Name="estimated_eu_taric" ColumnName="estimated_eu_taric" />
+                <ScalarProperty Name="estimated_eu_en" ColumnName="estimated_eu_en" />
+                <ScalarProperty Name="estimated_us_htsus" ColumnName="estimated_us_htsus" />
+                <ScalarProperty Name="estimated_us_schedule_b" ColumnName="estimated_us_schedule_b" />
+                <ScalarProperty Name="estimated_china_hsn" ColumnName="estimated_china_hsn" />
+                <ScalarProperty Name="estimated_india_hsn" ColumnName="estimated_india_hsn" />
+                <ScalarProperty Name="estimated_turkey_hsn" ColumnName="estimated_turkey_hsn" />
+                <ScalarProperty Name="estimated_sa_tariff_code" ColumnName="estimated_sa_tariff_code" />
+                <ScalarProperty Name="actual_eu_taric" ColumnName="actual_eu_taric" />
+                <ScalarProperty Name="actual_eu_en" ColumnName="actual_eu_en" />
+                <ScalarProperty Name="actual_us_htsus" ColumnName="actual_us_htsus" />
+                <ScalarProperty Name="actual_us_schedule_b" ColumnName="actual_us_schedule_b" />
+                <ScalarProperty Name="actual_china_hsn" ColumnName="actual_china_hsn" />
+                <ScalarProperty Name="actual_india_hsn" ColumnName="actual_india_hsn" />
+                <ScalarProperty Name="actual_turkey_hsn" ColumnName="actual_turkey_hsn" />
+                <ScalarProperty Name="actual_sa_tariff_code" ColumnName="actual_sa_tariff_code" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,72 @@
+﻿@model IEnumerable<jQueryAjaxInAsp.NETMVC.Models.hsn_table>
+
+@{
+    ViewBag.Title = "ViewAll1";
+    Layout = null;
+}
+
+<table class="table table-striped table-condensed cell-border " id="employeeTable1" >
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.estimated_china_hsn)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.estimated_eu_en)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.estimated_india_hsn)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.year)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.estimated_eu_taric)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.estimated_sa_tariff_code)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.estimated_turkey_hsn)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.file_id)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.estimated_china_hsn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.estimated_eu_en)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.estimated_india_hsn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.year)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.estimated_eu_taric)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.actual_sa_tariff_code)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.estimated_turkey_hsn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.file_id)
+            </td>
+            <td>
+                </td>
+        </tr>
+        }
+    </tbody>
+</table>

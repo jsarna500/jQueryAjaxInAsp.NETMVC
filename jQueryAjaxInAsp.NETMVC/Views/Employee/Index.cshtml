@@ -1,0 +1,43 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<ul class="nav nav-tabs">
+    <li><a data-toggle="tab" href="#firstTab">Search</a></li>
+    <li class="active"><a data-toggle="tab" href="#secondTab">Add New</a></li>
+    <li><a data-toggle="tab" href="#ThirdTab">View All1</a></li>
+</ul>
+<div class="tab-content">
+    <div id="firstTab" class="tab-pane fade in">@Html.Action("Search")</div>
+    <div id="secondTab" class="tab-pane fade in active">@Html.Action("AddOrEdit")</div>
+    <div id="ThirdTab" class="tab-pane fade in ">@Html.Action("ViewAll1")</div>
+</div>
+
+<link href="//cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
+
+
+
+@section scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+
+    <script src="//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+
+
+    <script>
+        function activatejQueryTable() {
+            $("#employeeTable1").DataTable({
+                "scrollX": true
+            }
+            );
+        }
+        function activatejQueryTable1() {
+            $("#employeeTable").DataTable();
+        }
+        $(function() {
+            activatejQueryTable1(),
+                activatejQueryTable();
+        });
+
+    </script>
+}
